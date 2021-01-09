@@ -14,7 +14,7 @@ private:
 
     bool direccion;
 public:
-    proyectil();
+    proyectil(short int x , short int y, short int ancho , short int alto );
 
 public slots:
 };

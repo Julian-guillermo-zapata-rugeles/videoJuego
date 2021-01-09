@@ -1,0 +1,6 @@
+#include "proyectil.h"
+
+proyectil::proyectil(short x, short y, short ancho, short alto)
+{
+    this->setRect(x,y,ancho,alto);
+}
