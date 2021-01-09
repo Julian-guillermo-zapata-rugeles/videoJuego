@@ -17,10 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    personaje.cpp
+    personaje.cpp \
+    proyectil.cpp
 
 HEADERS += \
-    personaje.h
+    personaje.h \
+    proyectil.h
 
 FORMS += \
     mainwindow.ui
