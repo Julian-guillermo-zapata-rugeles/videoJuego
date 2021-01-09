@@ -17,10 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
+    mundoterrestre.cpp \
     personaje.cpp \
     proyectil.cpp
 
 HEADERS += \
+    mundoterrestre.h \
     personaje.h \
     proyectil.h
 
