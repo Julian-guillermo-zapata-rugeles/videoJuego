@@ -4,19 +4,22 @@
 #include <QObject>
 #include <QTimer>
 #include <QGraphicsRectItem>
+#include <QGraphicsScene>
+#include <QDebug>
 
-class proyectil : public QGraphicsRectItem , public QObject
+class proyectil : public QObject , public QGraphicsRectItem
 {
     Q_OBJECT
 private:
     // direccion True  para derecha
     // direccion False para izquierda
-
     bool direccion;
+
 public:
-    proyectil();
+    proyectil(bool dir);
 
 public slots:
+    void moverProyectil();
 };
 
 #endif // PROYECTIL_H

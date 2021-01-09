@@ -9,7 +9,7 @@ class personaje : public QGraphicsRectItem , public QObject
 {
 
 public:
-    personaje(short int x , short int y , short int ancho , short int alto);
+    personaje();
 
     void keyPressEvent(QKeyEvent *event);
 };
