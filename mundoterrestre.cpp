@@ -4,8 +4,12 @@ mundoTerrestre::mundoTerrestre()
 {
     // creacion y anexo de personajes  //
     scene->addItem(personajePrincipal);
-    connect(ticks,SIGNAL(timeout()),this,SLOT(eventos()));
-    ticks->start(10000);
+    connect(generadorAsteroides,SIGNAL(timeout()),this,SLOT(generador()));
+    connect(ticks,SIGNAL(timeout()),this,SLOT(ticksManager()));
+
+
+    generadorAsteroides->start(2000);
+    ticks->start(30);
 }
 
 void mundoTerrestre::iniciarMundo()
@@ -19,8 +23,19 @@ void mundoTerrestre::iniciarMundo()
 
 }
 
-void mundoTerrestre::eventos()
+void mundoTerrestre::generador()
 {
-    asteroides *asteroide = new asteroides();
-    scene->addItem(asteroide);
+    v_asteroides.push_back(new asteroides());
+    scene->addItem(v_asteroides.last());
+
+}
+
+void mundoTerrestre::ticksManager()
+{
+    for(auto& it:v_asteroides){
+        if(it->moverAsteroide()){
+            scene->removeItem(it);
+            v_asteroides.erase(std::remove(v_asteroides.begin(),v_asteroides.end(),it),v_asteroides.end());
+        }
+    }
 }

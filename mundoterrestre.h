@@ -7,6 +7,7 @@
 #include <personaje.h> // propia
 #include <QKeyEvent>
 #include <QDebug>
+#include <QTimer>
 #include <asteroides.h> // propia
 class mundoTerrestre : public QObject , public QGraphicsRectItem
 {
@@ -19,10 +20,13 @@ public:
     personaje * personajePrincipal = new personaje();
     QGraphicsView * vista = new QGraphicsView(scene);
     QTimer *ticks = new QTimer();
+    QTimer *generadorAsteroides = new QTimer();
+    QVector <asteroides *> v_asteroides;
 
 
 public slots:
-  void eventos();
+  void generador();
+  void ticksManager();
 };
 
 #endif // MUNDOTERRESTRE_H

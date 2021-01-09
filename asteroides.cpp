@@ -3,20 +3,26 @@
 asteroides::asteroides()
 {
     srand(time(0));
-    signed short int dimension = 1+ rand()% 200 ;
+    signed short int dimension = 50+ rand()% 200 ;
     this->setRect(0,0,dimension,dimension);
-    setPos(1+rand()%1200,-500);
-    QTimer *timer = new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(moverAsteroide()));
-    timer->start(30);
+    setPos(1+rand()%1200,-0);
+    //QTimer *timer = new QTimer();
+    //connect(timer,SIGNAL(timeout()),this,SLOT(moverAsteroide()));
+    //timer->start(30);
 }
 
-void asteroides::moverAsteroide()
+
+bool asteroides::moverAsteroide()
 {
     setPos(x(),y()+5);
     if(pos().y() > 560 ){
-        scene()->removeItem(this);
-        delete this;
         qDebug() << "asteroide eliminado";
+        sonido->stop();
+        sonido->setMedia(QUrl("qrc:/multimedia/explosion1.mp3"));
+        sonido->play();
+        return true;
+    }
+    else{
+        return false;
     }
 }

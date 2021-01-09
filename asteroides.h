@@ -2,21 +2,22 @@
 #define ASTEROIDES_H
 
 #include <QObject>
-#include <QTimer>
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QDebug>
 #include <random>
+#include <QMediaPlayer>
+#include <QVector>
 
 class asteroides :public QObject , public QGraphicsRectItem
 {
     Q_OBJECT
 
+private:
+    QMediaPlayer *sonido = new QMediaPlayer();
 public:
     asteroides();
-
-public slots:
-    void moverAsteroide();
+    bool moverAsteroide();
 };
 
 #endif // ASTEROIDES_H
