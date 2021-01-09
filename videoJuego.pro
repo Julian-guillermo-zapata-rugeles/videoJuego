@@ -16,12 +16,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    asteroides.cpp \
     main.cpp \
     mundoterrestre.cpp \
     personaje.cpp \
     proyectil.cpp
 
 HEADERS += \
+    asteroides.h \
     mundoterrestre.h \
     personaje.h \
     proyectil.h
