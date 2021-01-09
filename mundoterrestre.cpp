@@ -4,7 +4,8 @@ mundoTerrestre::mundoTerrestre()
 {
     // creacion y anexo de personajes  //
     scene->addItem(personajePrincipal);
-    scene->addItem(asteroide);
+    connect(ticks,SIGNAL(timeout()),this,SLOT(eventos()));
+    ticks->start(10000);
 }
 
 void mundoTerrestre::iniciarMundo()
@@ -16,4 +17,10 @@ void mundoTerrestre::iniciarMundo()
     vista->setFixedSize(1300,600);
     vista->setSceneRect(0,0,1300,600);
 
+}
+
+void mundoTerrestre::eventos()
+{
+    asteroides *asteroide = new asteroides();
+    scene->addItem(asteroide);
 }

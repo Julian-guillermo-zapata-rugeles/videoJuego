@@ -17,8 +17,12 @@ public:
  private:
     QGraphicsScene * scene  = new QGraphicsScene();
     personaje * personajePrincipal = new personaje();
-    asteroides *asteroide = new asteroides();
     QGraphicsView * vista = new QGraphicsView(scene);
+    QTimer *ticks = new QTimer();
+
+
+public slots:
+  void eventos();
 };
 
 #endif // MUNDOTERRESTRE_H
