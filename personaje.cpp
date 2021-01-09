@@ -15,11 +15,17 @@ personaje::personaje(){
 void personaje::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_A){
-        setPos(x()-5,y());
+        if(pos().x()>0){
+            setPos(x()-5,y());
+        }
     }
+
     if(event->key() == Qt::Key_D){
+        if(pos().x()<1300-30){
         setPos(x()+5,y());
-    }
+        }
+     }
+
     if(event->key() == Qt::Key_W){
         setPos(x(),y()-5);
     }
