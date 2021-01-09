@@ -4,6 +4,7 @@ mundoTerrestre::mundoTerrestre()
 {
     // creacion y anexo de personajes  //
     scene->addItem(personajePrincipal);
+    scene->addItem(asteroide);
 }
 
 void mundoTerrestre::iniciarMundo()

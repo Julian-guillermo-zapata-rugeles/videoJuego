@@ -10,7 +10,6 @@ class personaje : public QGraphicsRectItem , public QObject
 
 public:
     personaje();
-
     void keyPressEvent(QKeyEvent *event);
 };
 

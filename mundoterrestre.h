@@ -7,16 +7,17 @@
 #include <personaje.h> // propia
 #include <QKeyEvent>
 #include <QDebug>
-
+#include <asteroides.h> // propia
 class mundoTerrestre : public QObject , public QGraphicsRectItem
 {
     Q_OBJECT
 public:
     mundoTerrestre();
     void iniciarMundo();
- public:
+ private:
     QGraphicsScene * scene  = new QGraphicsScene();
     personaje * personajePrincipal = new personaje();
+    asteroides *asteroide = new asteroides();
     QGraphicsView * vista = new QGraphicsView(scene);
 };
 
