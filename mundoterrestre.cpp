@@ -8,7 +8,7 @@ mundoTerrestre::mundoTerrestre()
     connect(ticks,SIGNAL(timeout()),this,SLOT(ticksManager()));
 
 
-    generadorAsteroides->start(2000);
+    generadorAsteroides->start(30000);
     ticks->start(30);
 }
 
