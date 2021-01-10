@@ -7,6 +7,9 @@
 #include <QGraphicsScene>
 #include <QDebug>
 #include <QMediaPlayer>
+#include <QList>
+#include <enemigo.h>
+#include <asteroides.h>
 
 class proyectil : public QObject , public QGraphicsRectItem
 {

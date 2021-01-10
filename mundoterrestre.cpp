@@ -4,6 +4,7 @@ mundoTerrestre::mundoTerrestre()
 {
     // creacion y anexo de personajes  //
     scene->addItem(personajePrincipal);
+    scene->addItem(enemy);
     connect(generadorAsteroides,SIGNAL(timeout()),this,SLOT(generador()));
     connect(ticks,SIGNAL(timeout()),this,SLOT(ticksManager()));
 

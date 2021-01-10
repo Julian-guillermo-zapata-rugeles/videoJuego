@@ -28,9 +28,5 @@ void proyectil::moverProyectil()
                 //scene()->removeItem(elementosColisionables[i]);
                 delete this;
             }
-        if(typeid (*(elementosColisionables[i]))==typeid (proyectil)){
-                scene()->removeItem(this);
-                delete this;
-            }
         }
 }

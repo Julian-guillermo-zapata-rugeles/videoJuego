@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     asteroides.cpp \
+    enemigo.cpp \
     main.cpp \
     mundoterrestre.cpp \
     personaje.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
 
 HEADERS += \
     asteroides.h \
+    enemigo.h \
     mundoterrestre.h \
     personaje.h \
     proyectil.h
