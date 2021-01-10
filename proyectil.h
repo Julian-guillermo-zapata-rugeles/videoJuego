@@ -6,6 +6,7 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QDebug>
+#include <QMediaPlayer>
 
 class proyectil : public QObject , public QGraphicsRectItem
 {

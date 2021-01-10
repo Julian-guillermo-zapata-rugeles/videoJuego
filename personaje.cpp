@@ -16,18 +16,18 @@ void personaje::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_A){
         if(pos().x()>0){
-            setPos(x()-5,y());
+            setPos(x()-10,y());
         }
     }
 
     if(event->key() == Qt::Key_D){
         if(pos().x()<1300-30){
-        setPos(x()+5,y());
+        setPos(x()+10,y());
         }
      }
 
     if(event->key() == Qt::Key_W){
-        setPos(x(),y()-5);
+        setPos(x(),y()-10);
     }
     if(event->key() == Qt::Key_Space){
         // disparo desde el personaje
@@ -36,5 +36,7 @@ void personaje::keyPressEvent(QKeyEvent *event)
         qDebug() <<"posicion y "<< this->y();
         scene()->addItem(disparo);
         disparo->setPos(this->x(),this->y());
+        sonido->setMedia(QUrl("qrc:/multimedia/laser1.mp3"));
+        sonido->play();
     }
 }

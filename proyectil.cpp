@@ -7,7 +7,6 @@ proyectil::proyectil(bool dir)
     QTimer *timer = new QTimer();
     connect(timer,SIGNAL(timeout()),this,SLOT(moverProyectil()));
     timer->start(10);
-
 }
 
 void proyectil::moverProyectil()
