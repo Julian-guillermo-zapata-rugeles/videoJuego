@@ -5,17 +5,20 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <proyectil.h>
-#include <QTimer>
+#include <random>
 
 class enemigo : public QObject , public QGraphicsRectItem
 {
     Q_OBJECT
 private:
-    QTimer *timer = new QTimer();
+    //QTimer *timer = new QTimer();
 public:
     enemigo();
-public slots:
+    void moverEnemigo(float position);
+
+/*public slots:
     void disparar();
+    */
 };
 
 #endif // ENEMIGO_H

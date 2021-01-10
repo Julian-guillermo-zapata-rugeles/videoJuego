@@ -3,7 +3,7 @@
 asteroides::asteroides()
 {
     srand(time(0));
-    signed short int dimension = 20+ rand()% 100 ;
+    signed short int dimension = 50+ rand()% 300 ;
     this->setRect(0,0,dimension,dimension);
     setPos(1+rand()%1200,-1500);
     sonido->stop();

@@ -10,6 +10,8 @@
 #include <QTimer>
 #include <asteroides.h> // propia
 #include <enemigo.h> // propia
+#include <QVector>
+#include <QSignalMapper>
 
 
 class mundoTerrestre : public QObject , public QGraphicsRectItem
@@ -21,15 +23,19 @@ public:
  private:
     QGraphicsScene * scene  = new QGraphicsScene();
     personaje * personajePrincipal = new personaje();
-    enemigo *enemy = new enemigo();
+
     QGraphicsView * vista = new QGraphicsView(scene);
+    // timers
     QTimer *ticks = new QTimer();
     QTimer *generadorAsteroides = new QTimer();
+    QTimer *generadorEnemigos = new QTimer();
+    // vectores //
     QVector <asteroides *> v_asteroides;
+    QVector <enemigo *> v_enemigos;
 
 
 public slots:
-  void generador();
+  void generador(int);
   void ticksManager();
 };
 

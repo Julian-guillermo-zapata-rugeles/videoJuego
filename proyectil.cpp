@@ -24,12 +24,8 @@ void proyectil::moverProyectil()
     }
     QList<QGraphicsItem *> elementosColisionables  = collidingItems() ;
     for(int i=0;i< elementosColisionables.size();i++){
-        if(typeid (*(elementosColisionables[i]))==typeid (asteroides)){
-                //scene()->removeItem(elementosColisionables[i]);
-                delete this;
-            }
-        if(typeid (*(elementosColisionables[i]))==typeid (proyectil)){
-                scene()->removeItem(this);
+        if(typeid (*(elementosColisionables[i]))==typeid (enemigo)){
+                scene()->removeItem(elementosColisionables[i]);
                 delete this;
             }
         }

@@ -11,6 +11,7 @@ class personaje : public QGraphicsRectItem , public QObject
 
 private:
     QMediaPlayer *sonido = new QMediaPlayer();
+    bool dir;
 public:
     personaje();
 
